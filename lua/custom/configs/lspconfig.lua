@@ -14,3 +14,4 @@ lspconfig.tsserver.setup({
   capabilities=capabilities,
   root_dir=lspconfig.util.root_pattern(".git")
 })
+

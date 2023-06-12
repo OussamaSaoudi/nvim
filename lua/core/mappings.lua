@@ -13,6 +13,9 @@ M.general = {
     ["<C-l>"] = { "<Right>", "move right" },
     ["<C-j>"] = { "<Down>", "move down" },
     ["<C-k>"] = { "<Up>", "move up" },
+
+    -- emacs style bindings
+    ["<C-d>"] = { "<C-o> dl", "delete forward"},
   },
 
   n = {
