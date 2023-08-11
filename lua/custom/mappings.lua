@@ -19,7 +19,7 @@ M.dap = {
         require('crates').upgrade_all_crates()
       end,
       "update crates"
-    }
+    },
   }
 }
 

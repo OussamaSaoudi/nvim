@@ -9,7 +9,8 @@ M.ui = {
         base02 = "#494858"  --- Visual-mode color
       },
       base_30 = {
-        grey_fg = "#c7d1ff", --- comment color
+        -- variable color: #c7d1ff
+        grey_fg = "#a5adcb", --- comment color
         grey = "#777595",  --- line number color 
         white = "#bfc6d4",    --- tab title color
       }
@@ -18,4 +19,5 @@ M.ui = {
 }
 M.plugins = 'custom.plugins'
 M.mappings = require "custom.mappings"
+
 return M

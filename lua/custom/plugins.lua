@@ -40,9 +40,6 @@ local plugins = {
         "cpp",
         "javascript"
       }
-    },
-    dependencies = {
-      "danymat/neogen",
     }
   },
   {
@@ -85,14 +82,14 @@ local plugins = {
   },
   {
     "mfussenegger/nvim-dap",
-    init = function()
-      require("core.utils").load_mappings("dap")
-    end
+    config = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+    dependencies = "rcarriga/nvim-dap-ui"
   },
   {
     'saecki/crates.nvim',
     dependencies = "hrsh7th/nvim-cmp",
-    ft = {"rust", "toml"},
     config = function(_, opts)
       local crates = require('crates')
       crates.setup(opts)
@@ -109,6 +106,44 @@ local plugins = {
       table.insert(M.sources, {name = "crates"})
       return M
     end,
-  }
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    config = function ()
+      require("custom.configs.nvim-dap-ui")
+    end
+  },
+  {
+    "hrsh7th/cmp-nvim-lsp-signature-help",
+    dependencies = "hrsh7th/nvim-cmp",
+  },
+  {
+    "nvim-orgmode/orgmode",
+    ft = "org",
+    config = function ()
+      require("custom.configs.org-mode")
+    end
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    ft = "markdown",
+    config = function ()
+      vim.fn["mkdp#util#install"]()
+    end
+  },
+  -- {
+  --   "ianding1/leetcode.vim",
+  --   config = function ()
+  --     local enable_providers = {
+  --       "python3_provider",
+  --       "node_provider",
+  --       -- and so on
+  --     }
+  --     for _, plugin in pairs(enable_providers) do
+  --       vim.g["loaded_" .. plugin] = nil
+  --       vim.cmd("runtime " .. plugin)
+  --     end
+  --   end
+  -- }
 }
 return plugins

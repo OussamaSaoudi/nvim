@@ -1,5 +1,5 @@
 local options = {
-  ensure_installed = { "lua", "c", "cpp", "comment" },
+  ensure_installed = { "lua", "c", "cpp", "comment", "org" },
 
   highlight = {
     enable = true,
@@ -27,7 +27,7 @@ local options = {
         show_help = '?',
       },
     },
-  tree_docs = {enable = true}
+  tree_docs = {enable = true},
 }
 
 return options

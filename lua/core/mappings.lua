@@ -243,6 +243,15 @@ M.lspconfig = {
       "list workspace folders",
     },
   },
+  v = {
+
+    ["<leader>ca"] = {
+      function()
+        vim.lsp.buf.code_action()
+      end,
+      "lsp code_action",
+    },
+  }
 }
 
 M.nvimtree = {
